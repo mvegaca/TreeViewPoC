@@ -1,0 +1,313 @@
+﻿<Page
+    x:Class="TreeViewPoC.Views.MainThreePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:model="using:TreeViewPoC.Core.Models"
+    xmlns:templateSelectors="using:TreeViewPoC.TemplateSelectors"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:views="using:TreeViewPoC.Views"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="CompanyTemplate" x:DataType="model:SampleCompany">
+            <winui:TreeViewItem
+                AutomationProperties.Name="{x:Bind CompanyName}"
+                ItemsSource="{x:Bind Orders}" IsExpanded="True">
+                <TextBlock Text="{x:Bind CompanyName}" Margin="6,6,6,6" />
+            </winui:TreeViewItem>
+        </DataTemplate>
+
+        <DataTemplate x:Key="CompanyContentTemplate" x:DataType="model:SampleCompany">
+            <StackPanel Margin="12">
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Company ID" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind CompanyID, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Company name" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind CompanyName, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Contact name" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind ContactName, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Contact title" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind ContactTitle, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Contact phone" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Phone, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Contact fax" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Fax, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Address" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Address, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="City" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind City, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Region" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Region, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Country" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Country, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Postal code" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind PostalCode, Mode=OneWay}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="OrderTemplate" x:DataType="model:SampleOrder">
+            <winui:TreeViewItem
+                AutomationProperties.Name="{x:Bind OrderID}"
+                ItemsSource="{x:Bind Details}" IsExpanded="True">
+                <StackPanel Orientation="Horizontal" Margin="6,6,6,6">
+                    <FontIcon
+                        FontSize="12"
+                        HorizontalAlignment="Left"
+                        Glyph="{x:Bind Symbol, Mode=OneWay}" />
+                    <TextBlock
+                        Margin="12,0,0,0"
+                        TextWrapping="Wrap"                        
+                        Text="{x:Bind ShortDescription}" />
+                </StackPanel>
+            </winui:TreeViewItem>
+        </DataTemplate>
+
+        <DataTemplate x:Key="OrderContentTemplate" x:DataType="model:SampleOrder">
+            <StackPanel Margin="12">
+                <FontIcon
+                    FontSize="48"
+                    HorizontalAlignment="Left"
+                    Glyph="{x:Bind Symbol, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Order ID" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind OrderID, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Order date" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind OrderDate, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Required date" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind RequiredDate, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Shipped date" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind ShippedDate, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Status" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Status, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Freight" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Freight, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="OrderTotal" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind OrderTotal, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Shipper name" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind ShipperName, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Shipper phone" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind ShipperPhone, Mode=OneWay}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="OrderDetailTemplate" x:DataType="model:SampleOrderDetail">
+            <winui:TreeViewItem
+                AutomationProperties.Name="{x:Bind ProductName}">
+                <TextBlock Text="{x:Bind ProductName}" TextWrapping="Wrap" Margin="6,6,6,6" />
+            </winui:TreeViewItem>
+        </DataTemplate>
+
+        <DataTemplate x:Key="OrderDetailContentTemplate" x:DataType="model:SampleOrderDetail">
+            <StackPanel Margin="12">
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Product ID" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind ProductID, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Product name" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind ProductName, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Quantity per unit" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind QuantityPerUnit, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Category name" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind CategoryName, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Category description" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind CategoryDescription, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Quantity" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Quantity, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Unit price" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind UnitPrice, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Discount" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Discount, Mode=OneWay}" />
+                <TextBlock
+                    Margin="{StaticResource SmallTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Total" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind Total, Mode=OneWay}" />
+                
+            </StackPanel>
+        </DataTemplate>
+
+        <templateSelectors:SampleDataTemplateSelector x:Key="TreeViewTemplateSelector"
+            CompanyTemplate="{StaticResource CompanyTemplate}"
+            OrderTemplate="{StaticResource OrderTemplate}"
+            OrderDetailTemplate="{StaticResource OrderDetailTemplate}" />
+
+        <templateSelectors:SampleDataTemplateSelector x:Key="ContentTemplateSelector"
+            CompanyTemplate="{StaticResource CompanyContentTemplate}"
+            OrderTemplate="{StaticResource OrderContentTemplate}"
+            OrderDetailTemplate="{StaticResource OrderDetailContentTemplate}" />
+
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200" MaxWidth="350" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <winui:TreeView
+            Grid.Column="0"
+            SelectionMode="Single"
+            ItemInvoked="TreeView_ItemInvoked"
+            ItemsSource="{x:Bind ViewModel.DataSource}"
+            ItemTemplateSelector="{StaticResource TreeViewTemplateSelector}" />
+
+        <ScrollViewer
+            Grid.Column="1"
+            Margin="16,0,0,0">
+            <ContentControl            
+                Content="{x:Bind ViewModel.SelectedItem, Mode=OneWay}"
+                ContentTemplateSelector="{StaticResource ContentTemplateSelector}" />
+        </ScrollViewer>
+
+        <controls:GridSplitter
+            Grid.Column="1"
+            GripperCursor="Default"
+            HorizontalAlignment="Left"
+            ResizeDirection="Auto"
+            ResizeBehavior="BasedOnAlignment"
+            CursorBehavior="ChangeOnSplitterHover"
+            Width="16" />
+    </Grid>
+</Page>

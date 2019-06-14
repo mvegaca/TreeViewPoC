@@ -137,6 +137,8 @@
     <Compile Include="Helpers\ResourceExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\file.png" />
+    <Content Include="Assets\folder.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -177,15 +179,24 @@
     <Compile Include="Helpers\NavHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TemplateSelectors\ExplorerItemTemplateSelector.cs" />
+    <Compile Include="TemplateSelectors\SampleDataTemplateSelector.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\MainThreeDetailControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ShellPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\MainThreeDetailControl.xaml.cs">
+      <DependentUpon>MainThreeDetailControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
@@ -266,5 +277,33 @@
       <Project>{3baf9337-b7c7-4b10-894e-60800150351d}</Project>
       <Name>TreeViewPoC.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\MainTwoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Views\MainTwoPage.xaml.cs">
+      <DependentUpon>MainTwoPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ViewModels\MainTwoViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\MainThreePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Views\MainThreePage.xaml.cs">
+      <DependentUpon>MainThreePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ViewModels\MainThreeViewModel.cs" />
   </ItemGroup>
 </Project>

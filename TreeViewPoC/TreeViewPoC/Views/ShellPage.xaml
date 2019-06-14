@@ -32,6 +32,8 @@
             Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/master/docs/projectTypes/navigationpane.md
             Edit String/en-US/Resources.resw: Add a menu item title for each page
             -->
+            <winui:NavigationViewItem x:Uid="Shell_MainThree" Icon="Document" helpers:NavHelper.NavigateTo="views:MainThreePage" />
+            <winui:NavigationViewItem x:Uid="Shell_MainTwo" Icon="Document" helpers:NavHelper.NavigateTo="views:MainTwoPage" />
             <winui:NavigationViewItem x:Uid="Shell_Main" Icon="Document" helpers:NavHelper.NavigateTo="views:MainPage" />
             <winui:NavigationViewItem x:Uid="Shell_MasterDetail" Icon="Document" helpers:NavHelper.NavigateTo="views:MasterDetailPage" />
         </winui:NavigationView.MenuItems>

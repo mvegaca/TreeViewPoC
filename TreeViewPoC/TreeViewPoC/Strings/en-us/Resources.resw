@@ -137,4 +137,12 @@
     <value>MasterDetail</value>
     <comment>Navigation view item name for MasterDetail</comment>
   </data>
+  <data name="Shell_MainTwo.Content" xml:space="preserve">
+    <value>MainTwo</value>
+    <comment>Navigation view item name for MainTwo</comment>
+  </data>
+  <data name="Shell_MainThree.Content" xml:space="preserve">
+    <value>MainThree</value>
+    <comment>Navigation view item name for MainThree</comment>
+  </data>
 </root>

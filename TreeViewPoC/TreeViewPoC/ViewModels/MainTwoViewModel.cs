@@ -7,17 +7,17 @@ using TreeViewPoC.Helpers;
 
 namespace TreeViewPoC.ViewModels
 {
-    public class MainViewModel : Observable
+    public class MainTwoViewModel : Observable
     {
-        public ObservableCollection<ExplorerItem> DataSource { get; } = new ObservableCollection<ExplorerItem>();
+        public ObservableCollection<SampleCompany> DataSource { get; } = new ObservableCollection<SampleCompany>();
 
-        public MainViewModel()
+        public MainTwoViewModel()
         {
         }
 
         public async Task LoadDataAsync()
         {
-            var data = await SampleDataService.GetSampleFilesAndFoldersAsync();
+            var data = await SampleDataService.GetSampleModelCpmpaniesDataAsync();
             foreach (var item in data)
             {
                 DataSource.Add(item);

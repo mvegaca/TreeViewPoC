@@ -1,0 +1,410 @@
+﻿[
+  {
+    "CompanyID": "ALFKI",
+    "CompanyName": "Alfreds Futterkiste",
+    "ContactName": "Maria Anders",
+    "ContactTitle": "Sales Representative",
+    "Address": "Obere Str. 57",
+    "City": "Berlin",
+    "Region": null,
+    "PostalCode": "12209",
+    "Country": "Germany",
+    "Phone": "030-0074321",
+    "Fax": "030-0076545",
+    "Orders": [
+      {
+        "OrderID": "10643",
+        "OrderDate": "1997-08-25 00:00:00.000",
+        "RequiredDate": "1997-09-22 00:00:00.000",
+        "ShippedDate": "1997-09-02 00:00:00.000",
+        "ShipperName": "Speedy Express",
+        "ShipperPhone": "(503) 555-9831",
+        "Freight": 29.46,
+        "Company": "Alfreds Futterkiste",
+        "ShipTo": "Alfreds Futterkiste, Obere Str. 57, Berlin, 12209, Germany",
+        "OrderTotal": 814.5,
+        "Status": "Shipped",
+        "SymbolCode": 57643,
+        "Details": [
+          {
+            "ProductID": "28",
+            "ProductName": "Rössle Sauerkraut",
+            "Quantity": 15,
+            "Discount": 0.25,
+            "QuantityPerUnit": "25 - 825 g cans",
+            "UnitPrice": 45.60,
+            "CategoryName": "Produce",
+            "CategoryDescription": "Dried fruit and bean curd",
+            "Total": 513
+          },
+          {
+            "ProductID": "39",
+            "ProductName": "Chartreuse verte",
+            "Quantity": 21,
+            "Discount": 0.25,
+            "QuantityPerUnit": "750 cc per bottle",
+            "UnitPrice": 18.00,
+            "CategoryName": "Beverages",
+            "CategoryDescription": "Soft drinks, coffees, teas, beers, and ales",
+            "Total": 283.5
+          },
+          {
+            "ProductID": "46",
+            "ProductName": "Spegesild",
+            "Quantity": 2,
+            "Discount": 0.25,
+            "QuantityPerUnit": "4 - 450 g glasses",
+            "UnitPrice": 12.00,
+            "CategoryName": "Seafood",
+            "CategoryDescription": "Seaweed and fish",
+            "Total": 18
+          }
+        ]
+      },
+      {
+        "OrderID": "10835",
+        "OrderDate": "1998-01-15 00:00:00.000",
+        "RequiredDate": "1998-02-12 00:00:00.000",
+        "ShippedDate": "1998-01-21 00:00:00.000",
+        "ShipperName": "Federal Shipping",
+        "ShipperPhone": "(503) 555-9931",
+        "Freight": 69.53,
+        "ShipTo": "Alfreds Futterkiste, Obere Str. 57, Berlin, 12209, Germany",
+        "OrderTotal": 845.8,
+        "Status": "Closed",
+        "SymbolCode": 57737,
+        "Details": [
+          {
+            "ProductID": "59",
+            "ProductName": "Raclette Courdavault",
+            "Quantity": 15,
+            "Discount": 0,
+            "QuantityPerUnit": "5 kg pkg.",
+            "UnitPrice": 55.00,
+            "CategoryName": "Dairy Products",
+            "CategoryDescription": "Cheeses",
+            "Total": 825
+          },
+          {
+            "ProductID": "77",
+            "ProductName": "Original Frankfurter grüne Soße",
+            "Quantity": 2,
+            "Discount": 0.2,
+            "QuantityPerUnit": "12 boxes",
+            "UnitPrice": 13.00,
+            "CategoryName": "Condiments",
+            "CategoryDescription": "Sweet and savory sauces, relishes, spreads, and seasonings",
+            "Total": 20.8
+          }
+        ]
+      },
+      {
+        "OrderID": "10952",
+        "OrderDate": "1998-03-16 00:00:00.000",
+        "RequiredDate": "1998-04-27 00:00:00.000",
+        "ShippedDate": "1998-03-24 00:00:00.000",
+        "ShipperName": "Speedy Express",
+        "ShipperPhone": "(503) 555-9831",
+        "Freight": 40.42,
+        "ShipTo": "Alfreds Futterkiste, Obere Str. 57, Berlin, 12209, Germany",
+        "OrderTotal": 471.2,
+        "Status": "Closed",
+        "SymbolCode": 57699,
+        "Details": [
+          {
+            "ProductID": "6",
+            "ProductName": "Grandma's Boysenberry Spread",
+            "Quantity": 16,
+            "Discount": 0.05,
+            "QuantityPerUnit": "12 - 8 oz jars",
+            "UnitPrice": 25.00,
+            "CategoryName": "Condiments",
+            "CategoryDescription": "Sweet and savory sauces, relishes, spreads, and seasonings",
+            "Total": 380
+          },
+          {
+            "ProductID": "28",
+            "ProductName": "Rössle Sauerkraut",
+            "Quantity": 2,
+            "Discount": 0,
+            "QuantityPerUnit": "25 - 825 g cans",
+            "UnitPrice": 45.60,
+            "CategoryName": "Produce",
+            "CategoryDescription": "Dried fruit and bean curd",
+            "Total": 91.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CompanyID": "ANATR",
+    "CompanyName": "Ana Trujillo Emparedados y helados",
+    "ContactName": "Ana Trujillo",
+    "ContactTitle": "Owner",
+    "Address": "Avda. de la Constitución 2222",
+    "City": "México D.F.",
+    "Region": "",
+    "PostalCode": "05021",
+    "Country": "Mexico",
+    "Phone": "(5) 555-4729",
+    "Fax": "(5) 555-3745",
+    "Orders": [
+      {
+        "OrderID": "10625",
+        "OrderDate": "1997-08-08 00:00:00.000",
+        "RequiredDate": "1997-09-05 00:00:00.000",
+        "ShippedDate": "1997-08-14 00:00:00.000",
+        "ShipperName": "Speedy Express",
+        "ShipperPhone": "(503) 555-9831",
+        "Freight": 43.90,
+        "ShipTo": "Ana Trujillo Emparedados y helados, Avda. de la Constitución 2222, 05021, México D.F., Mexico",
+        "OrderTotal": 469.75,
+        "Status": "Shipped",
+        "SymbolCode": 57620,
+        "Details": [
+          {
+            "ProductID": "14",
+            "ProductName": "Tofu",
+            "Quantity": 3,
+            "Discount": 0,
+            "QuantityPerUnit": "40 - 100 g pkgs.",
+            "UnitPrice": 23.25,
+            "CategoryName": "Produce",
+            "CategoryDescription": "Dried fruit and bean curd",
+            "Total": 69.75
+          },
+          {
+            "ProductID": "42",
+            "ProductName": "Singaporean Hokkien Fried Mee",
+            "Quantity": 5,
+            "Discount": 0,
+            "QuantityPerUnit": "32 - 1 kg pkgs.",
+            "UnitPrice": 14.00,
+            "CategoryName": "Grains/Cereals",
+            "CategoryDescription": "Breads, crackers, pasta, and cereal",
+            "Total": 70
+          },
+          {
+            "ProductID": "60",
+            "ProductName": "Camembert Pierrot",
+            "Quantity": 10,
+            "Discount": 0,
+            "QuantityPerUnit": "15 - 300 g rounds",
+            "UnitPrice": 34.00,
+            "CategoryName": "Dairy Products",
+            "CategoryDescription": "Cheeses",
+            "Total": 340.00
+          }
+        ]
+      },
+      {
+        "OrderID": "10926",
+        "OrderDate": "1998-03-04 00:00:00.000",
+        "RequiredDate": "1998-04-01 00:00:00.000",
+        "ShippedDate": "1998-03-11 00:00:00.000",
+        "ShipperName": "Federal Shipping",
+        "ShipperPhone": "(503) 555-9931",
+        "Freight": 39.92,
+        "ShipTo": "Ana Trujillo Emparedados y helados, Avda. de la Constitución 2222, 05021, México D.F., Mexico",
+        "OrderTotal": 507.2,
+        "Status": "",
+        "SymbolCode": 57633,
+        "Details": [
+          {
+            "ProductID": "11",
+            "ProductName": "Queso Cabrales",
+            "Quantity": 2,
+            "Discount": 0,
+            "QuantityPerUnit": "1 kg pkg.",
+            "UnitPrice": 21.00,
+            "CategoryName": "Dairy Products",
+            "CategoryDescription": "Cheeses",
+            "Total": 42.00
+          },
+          {
+            "ProductID": "13",
+            "ProductName": "Konbu",
+            "Quantity": 10,
+            "Discount": 0,
+            "QuantityPerUnit": "2 kg box",
+            "UnitPrice": 6.00,
+            "CategoryName": "Seafood",
+            "CategoryDescription": "Seaweed and fish",
+            "Total": 60.00
+          },
+          {
+            "ProductID": "19",
+            "ProductName": "Teatime Chocolate Biscuits",
+            "Quantity": 7,
+            "Discount": 0,
+            "QuantityPerUnit": "10 boxes x 12 pieces",
+            "UnitPrice": 9.20,
+            "CategoryName": "Confections",
+            "CategoryDescription": "Desserts, candies, and sweet breads",
+            "Total": 64.4
+          },
+          {
+            "ProductID": "72",
+            "ProductName": "Mozzarella di Giovanni",
+            "Quantity": 10,
+            "Discount": 0,
+            "QuantityPerUnit": "24 - 200 g pkgs.",
+            "UnitPrice": 34.80,
+            "CategoryName": "Dairy Products",
+            "CategoryDescription": "Cheeses",
+            "Total": 340.8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CompanyID": "ANTON",
+    "CompanyName": "Antonio Moreno Taquería",
+    "ContactName": "Antonio Moreno",
+    "ContactTitle": "Owner",
+    "Address": "Mataderos  2312",
+    "City": "México D.F.",
+    "Region": "",
+    "PostalCode": "05023",
+    "Country": "Mexico",
+    "Phone": "(5) 555-3932",
+    "Fax": "",
+    "Orders": [
+      {
+        "OrderID": "10507",
+        "OrderDate": "1997-04-15 00:00:00.000",
+        "RequiredDate": "1997-05-13 00:00:00.000",
+        "ShippedDate": "1997-04-22 00:00:00.000",
+        "ShipperName": "Speedy Express",
+        "ShipperPhone": "(503) 555-9831",
+        "Freight": 47.45,
+        "ShipTo": "Antonio Moreno Taquería, Mataderos  2312, 05023, México D.F., Mexico",
+        "OrderTotal": 978.5,
+        "Status": "Closed",
+        "SymbolCode": 57661,
+        "Details": [
+          {
+            "ProductID": "43",
+            "ProductName": "Ipoh Coffee",
+            "Quantity": 15,
+            "Discount": 0.15,
+            "QuantityPerUnit": "16 - 500 g tins",
+            "UnitPrice": 46.00,
+            "CategoryName": "Beverages",
+            "CategoryDescription": "Soft drinks, coffees, teas, beers, and ales",
+            "Total": 816
+          },
+          {
+            "ProductID": "48",
+            "ProductName": "Chocolade",
+            "Quantity": 15,
+            "Discount": 0.15,
+            "QuantityPerUnit": "10 pkgs.",
+            "UnitPrice": 12.75,
+            "CategoryName": "Confections",
+            "CategoryDescription": "Desserts, candies, and sweet breads",
+            "Total": 162.5
+          }
+        ]
+      },
+      {
+        "OrderID": "10573",
+        "OrderDate": "1997-06-19 00:00:00.000",
+        "RequiredDate": "1997-07-17 00:00:00.000",
+        "ShippedDate": "1997-06-20 00:00:00.000",
+        "ShipperName": "Federal Shipping",
+        "ShipperPhone": "(503) 555-9931",
+        "Freight": 84.84,
+        "ShipTo": "Antonio Moreno Taquería, Mataderos  2312, 05023, México D.F., Mexico",
+        "OrderTotal": 2082,
+        "Status": "Closed",
+        "SymbolCode": 57619,
+        "Details": [
+          {
+            "ProductID": "17",
+            "ProductName": "Alice Mutton",
+            "Quantity": 18,
+            "Discount": 0,
+            "QuantityPerUnit": "20 - 1 kg tins",
+            "UnitPrice": 39.00,
+            "CategoryName": "Meat/Poultry",
+            "CategoryDescription": "Prepared meats",
+            "Total": 702
+          },
+          {
+            "ProductID": "34",
+            "ProductName": "Sasquatch Ale",
+            "Quantity": 40,
+            "Discount": 0,
+            "QuantityPerUnit": "24 - 12 oz bottles",
+            "UnitPrice": 14.00,
+            "CategoryName": "Beverages",
+            "CategoryDescription": "Soft drinks, coffees, teas, beers, and ales",
+            "Total": 560
+          },
+          {
+            "ProductID": "53",
+            "ProductName": "Perth Pasties",
+            "Quantity": 25,
+            "Discount": 0,
+            "QuantityPerUnit": "48 pieces",
+            "UnitPrice": 32.80,
+            "CategoryName": "Meat/Poultry",
+            "CategoryDescription": "Prepared meats",
+            "Total": 820
+          }
+        ]
+      },
+      {
+        "OrderID": "10682",
+        "OrderDate": "1997-09-25 00:00:00.000",
+        "RequiredDate": "1997-10-23 00:00:00.000",
+        "ShippedDate": "1997-10-01 00:00:00.000",
+        "ShipperName": "United Package",
+        "ShipperPhone": "(503) 555-3199",
+        "Freight": 36.13,
+        "ShipTo": "Antonio Moreno Taquería, Mataderos  2312, 05023, México D.F., Mexico",
+        "OrderTotal": 375.5,
+        "Status": "Closed",
+        "SymbolCode": 57615,
+        "Details": [
+          {
+            "ProductID": "33",
+            "ProductName": "Geitost",
+            "Quantity": 30,
+            "Discount": 0,
+            "QuantityPerUnit": "500 g",
+            "UnitPrice": 2.5,
+            "CategoryName": "Dairy Products",
+            "CategoryDescription": "Cheeses",
+            "Total": 75
+          },
+          {
+            "ProductID": "66",
+            "ProductName": "Louisiana Hot Spiced Okra",
+            "Quantity": 4,
+            "Discount": 0,
+            "QuantityPerUnit": "24 - 8 oz jars",
+            "UnitPrice": 17.00,
+            "CategoryName": "Condiments",
+            "CategoryDescription": "Sweet and savory sauces, relishes, spreads, and seasonings",
+            "Total": 68
+          },
+          {
+            "ProductID": "75",
+            "ProductName": "Rhönbräu Klosterbier",
+            "Quantity": 30,
+            "Discount": 0,
+            "QuantityPerUnit": "24 - 0.5 l bottles",
+            "UnitPrice": 7.75,
+            "CategoryName": "Beverages",
+            "CategoryDescription": "Soft drinks, coffees, teas, beers, and ales",
+            "Total": 232.5
+          }
+        ]
+      }
+    ]
+  }
+]

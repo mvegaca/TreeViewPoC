@@ -7,11 +7,11 @@ using Windows.UI.Xaml.Navigation;
 
 namespace TreeViewPoC.Views
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class MainTwoPage : Page
     {
-        public MainViewModel ViewModel { get; } = new MainViewModel();
+        public MainTwoViewModel ViewModel { get; } = new MainTwoViewModel();
 
-        public MainPage()
+        public MainTwoPage()
         {
             InitializeComponent();
         }

@@ -4,15 +4,41 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:behaviors="using:TreeViewPoC.Behaviors"
+    xmlns:model="using:TreeViewPoC.Core.Models"
+    xmlns:templateSelectors="using:TreeViewPoC.TemplateSelectors"
+    behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
-    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
-        <Grid
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--
-                The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.
-            -->
-        </Grid>
-    </Grid>
+
+    <Page.Resources>
+        <DataTemplate x:Key="FolderTemplate" x:DataType="model:ExplorerItem">
+            <winui:TreeViewItem
+                AutomationProperties.Name="{x:Bind Name}"
+                ItemsSource="{x:Bind Children}" IsExpanded="True">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Assets/folder.png" />
+                    <TextBlock Margin="10,0,0,0" Text="{x:Bind Name}" />
+                </StackPanel>
+            </winui:TreeViewItem>
+        </DataTemplate>
+
+        <DataTemplate x:Key="FileTemplate" x:DataType="model:ExplorerItem">
+            <winui:TreeViewItem AutomationProperties.Name="{x:Bind Name}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Assets/file.png" />
+                    <TextBlock Margin="10,0,0,0" Text="{x:Bind Name}" />
+                </StackPanel>
+            </winui:TreeViewItem>
+        </DataTemplate>
+
+        <templateSelectors:ExplorerItemTemplateSelector x:Key="ExpolrerItemTemplateSelector"
+            FolderTemplate="{StaticResource FolderTemplate}"
+            FileTemplate="{StaticResource FileTemplate}" />
+    </Page.Resources>
+
+    <winui:TreeView
+        ItemsSource="{x:Bind ViewModel.DataSource}" 
+        ItemTemplateSelector="{StaticResource ExpolrerItemTemplateSelector}" />
 </Page>

@@ -39,7 +39,7 @@ namespace TreeViewPoC
 
         private ActivationService CreateActivationService()
         {
-            return new ActivationService(this, typeof(Views.MainThreePage), new Lazy<UIElement>(CreateShell));
+            return new ActivationService(this, typeof(Views.TreeViewPage), new Lazy<UIElement>(CreateShell));
         }
 
         private UIElement CreateShell()

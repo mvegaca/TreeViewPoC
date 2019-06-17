@@ -208,7 +208,7 @@
         "Freight": 39.92,
         "ShipTo": "Ana Trujillo Emparedados y helados, Avda. de la Constitución 2222, 05021, México D.F., Mexico",
         "OrderTotal": 507.2,
-        "Status": "",
+        "Status": "Shipped",
         "SymbolCode": 57633,
         "Details": [
           {

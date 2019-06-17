@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using TreeViewPoC.Core.Extensions;
 
 namespace TreeViewPoC.Core.Models
 {
@@ -43,29 +41,6 @@ namespace TreeViewPoC.Core.Models
             return $"{Company} {Status}";
         }
 
-        public string LongDescription
-        {
-            get
-            {
-                var result = new StringBuilder();
-                result.Append("Order: ");
-                result.TryAppendFormat("{0} ", OrderID);
-                result.TryAppendFormat("Status: {0} ", Status);
-                result.TryAppendFormat("Freight: {0} ", Freight);
-                result.TryAppendFormat("OrderTotal: {0} ", OrderTotal);
-                return result.ToString();
-            }
-        }
-
-        public string ShortDescription
-        {
-            get
-            {
-                var result = new StringBuilder();
-                result.TryAppendFormat("{0} ", OrderDate?.ToString("MM/dd"));
-                result.TryAppendFormat("{0} ", Status);
-                return result.ToString();
-            }
-        }
+        public string ShortDescription => $"{OrderDate?.ToString("MM/dd")} {Status}";
     }
 }

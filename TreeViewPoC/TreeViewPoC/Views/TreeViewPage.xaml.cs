@@ -2,16 +2,17 @@
 
 using TreeViewPoC.ViewModels;
 
+using WinUI = Microsoft.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 namespace TreeViewPoC.Views
 {
-    public sealed partial class MainTwoPage : Page
+    public sealed partial class TreeViewPage : Page
     {
-        public MainTwoViewModel ViewModel { get; } = new MainTwoViewModel();
+        public TreeViewViewModel ViewModel { get; } = new TreeViewViewModel();
 
-        public MainTwoPage()
+        public TreeViewPage()
         {
             InitializeComponent();
         }
@@ -20,6 +21,11 @@ namespace TreeViewPoC.Views
         {
             base.OnNavigatedTo(e);
             await ViewModel.LoadDataAsync();
+        }
+
+        private void TreeView_ItemInvoked(WinUI.TreeView sender, WinUI.TreeViewItemInvokedEventArgs args)
+        {
+            ViewModel.SelectedItem = args.InvokedItem;
         }
     }
 }

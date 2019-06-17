@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Text;
-using TreeViewPoC.Core.Extensions;
 
 namespace TreeViewPoC.Core.Models
 {
@@ -29,27 +27,5 @@ namespace TreeViewPoC.Core.Models
         public string Fax { get; set; }
 
         public IEnumerable<SampleOrder> Orders { get; set; }
-
-        public string LongDescription
-        {
-            get
-            {
-                var result = new StringBuilder();
-                result.Append("Company: ");
-                result.TryAppendFormat("{0} ", CompanyID);
-                result.TryAppendFormat("{0} ", CompanyName);
-                result.Append("Contact: ");
-                result.TryAppendFormat("{0} ", ContactName);
-                result.TryAppendFormat("{0} ", ContactTitle);
-                result.TryAppendFormat(" Phone: {0} ", Phone);
-                result.Append("Location: ");
-                result.TryAppendFormat("{0} ", Address);
-                result.TryAppendFormat("{0} ", PostalCode);
-                result.TryAppendFormat("{0} ", City);
-                result.TryAppendFormat("{0} ", Region);
-                result.TryAppendFormat("{0} ", Country);
-                return result.ToString();
-            }
-        }
     }
 }

@@ -125,10 +125,6 @@
     <value>TreeViewPoC</value>
     <comment>Application description</comment>
   </data>
-  <data name="Shell_Main.Content" xml:space="preserve">
-    <value>Main</value>
-    <comment>Navigation view item name for Main</comment>
-  </data>
   <data name="MasterDetail_NoSelection.Text" xml:space="preserve">
     <value>Select an item from the list.</value>
     <comment>No selection text for MasterDetail</comment>
@@ -137,12 +133,8 @@
     <value>MasterDetail</value>
     <comment>Navigation view item name for MasterDetail</comment>
   </data>
-  <data name="Shell_MainTwo.Content" xml:space="preserve">
-    <value>MainTwo</value>
-    <comment>Navigation view item name for MainTwo</comment>
-  </data>
-  <data name="Shell_MainThree.Content" xml:space="preserve">
-    <value>MainThree</value>
-    <comment>Navigation view item name for MainThree</comment>
+  <data name="Shell_TreeView.Content" xml:space="preserve">
+    <value>TreeView</value>
+    <comment>Navigation view item name for TreeView</comment>
   </data>
 </root>

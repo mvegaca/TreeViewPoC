@@ -296,7 +296,7 @@
             Grid.Column="1"
             Margin="16,0,0,0">
             <ContentControl            
-                Content="{x:Bind ViewModel.SelectedItem}"
+                Content="{x:Bind ViewModel.SelectedItem, Mode=OneWay}"
                 ContentTemplateSelector="{StaticResource ContentTemplateSelector}" />
         </ScrollViewer>
 

@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Windows.Input;
 using Microsoft.Xaml.Interactivity;
 using TreeViewPoC.Helpers;
 using WinUI = Microsoft.UI.Xaml.Controls;
@@ -13,50 +14,26 @@ namespace TreeViewPoC.Behaviors
 
         public TreeViewExpandCollapseBehavior()
         {
-            CollapseAllCommand = new RelayCommand(OnCollapseAll);
-            ExpandAllCommand = new RelayCommand(OnExpandAll);
+            CollapseAllCommand = new RelayCommand(() => ExpandOrCollapse(AssociatedObject.RootNodes, false));
+            ExpandAllCommand = new RelayCommand(() => ExpandOrCollapse(AssociatedObject.RootNodes, true));
         }
 
-        private void OnCollapseAll()
-        {
-            foreach (var node in AssociatedObject.RootNodes)
-            {
-                CollapseNode(node);
-            }
-        }
 
-        private void OnExpandAll()
+        private void ExpandOrCollapse(IList<WinUI.TreeViewNode> nodes, bool expand)
         {
-            foreach (var node in AssociatedObject.RootNodes)
+            foreach (var node in nodes)
             {
-                ExpandNode(node);
-            }
-        }        
+                ExpandOrCollapse(node.Children, expand);
 
-        private void CollapseNode(WinUI.TreeViewNode node)
-        {
-            if (node.HasChildren)
-            {
-                foreach (var child in node.Children)
+                if (expand)
                 {
-                    CollapseNode(child);
+                    AssociatedObject.Expand(node);
+                }
+                else
+                {
+                    AssociatedObject.Collapse(node);
                 }
             }
-
-            AssociatedObject.Collapse(node);
         }
-
-        private void ExpandNode(WinUI.TreeViewNode node)
-        {
-            if (node.HasChildren)
-            {
-                foreach (var child in node.Children)
-                {
-                    ExpandNode(child);
-                }
-            }
-
-            AssociatedObject.Expand(node);
-        }        
     }
 }

@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
+    <Compile Include="Behaviors\TreeViewExpandCollapseBehavior.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultActivationHandler.cs" />
   </ItemGroup>
@@ -267,5 +268,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModels\TreeViewViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Services\ThemeSelectorService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\SettingsStorageExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\EnumToBooleanConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
   </ItemGroup>
 </Project>

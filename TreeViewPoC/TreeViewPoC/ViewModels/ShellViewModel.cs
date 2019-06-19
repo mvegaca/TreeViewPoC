@@ -6,6 +6,7 @@ using System.Windows.Input;
 
 using TreeViewPoC.Helpers;
 using TreeViewPoC.Services;
+using TreeViewPoC.Views;
 
 using Windows.System;
 using Windows.UI.Xaml.Controls;
@@ -69,6 +70,12 @@ namespace TreeViewPoC.ViewModels
 
         private void OnItemInvoked(WinUI.NavigationViewItemInvokedEventArgs args)
         {
+            if (args.IsSettingsInvoked)
+            {
+                NavigationService.Navigate(typeof(SettingsPage));
+                return;
+            }
+
             var item = _navigationView.MenuItems
                             .OfType<WinUI.NavigationViewItem>()
                             .First(menuItem => (string)menuItem.Content == (string)args.InvokedItem);
@@ -89,6 +96,12 @@ namespace TreeViewPoC.ViewModels
         private void Frame_Navigated(object sender, NavigationEventArgs e)
         {
             IsBackEnabled = NavigationService.CanGoBack;
+            if (e.SourcePageType == typeof(SettingsPage))
+            {
+                Selected = _navigationView.SettingsItem as WinUI.NavigationViewItem;
+                return;
+            }
+
             Selected = _navigationView.MenuItems
                             .OfType<WinUI.NavigationViewItem>()
                             .FirstOrDefault(menuItem => IsMenuItemForPageType(menuItem, e.SourcePageType));

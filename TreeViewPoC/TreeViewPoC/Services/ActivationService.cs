@@ -62,7 +62,7 @@ namespace TreeViewPoC.Services
 
         private async Task InitializeAsync()
         {
-            await Task.CompletedTask;
+            await ThemeSelectorService.InitializeAsync();
         }
 
         private async Task HandleActivationAsync(object activationArgs)
@@ -87,7 +87,7 @@ namespace TreeViewPoC.Services
 
         private async Task StartupAsync()
         {
-            await Task.CompletedTask;
+            await ThemeSelectorService.SetRequestedThemeAsync();
         }
 
         private IEnumerable<ActivationHandler> GetActivationHandlers()

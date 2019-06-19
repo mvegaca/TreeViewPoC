@@ -19,5 +19,7 @@
         public string CategoryDescription { get; set; }
 
         public double Total { get; set; }
+
+        public string ShortDescription => $"Product ID: {ProductID} - {ProductName}";
     }
 }

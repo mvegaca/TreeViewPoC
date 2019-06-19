@@ -41,6 +41,6 @@ namespace TreeViewPoC.Core.Models
             return $"{Company} {Status}";
         }
 
-        public string ShortDescription => $"{OrderDate?.ToString("MM/dd")} {Status}";
+        public string ShortDescription => $"Order ID: {OrderID} {OrderDate?.ToShortDateString()}";
     }
 }

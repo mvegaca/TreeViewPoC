@@ -1,8 +1,6 @@
 ﻿using System;
-
+using TreeViewPoC.Helpers;
 using TreeViewPoC.ViewModels;
-
-using WinUI = Microsoft.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -21,11 +19,6 @@ namespace TreeViewPoC.Views
         {
             base.OnNavigatedTo(e);
             await ViewModel.LoadDataAsync();
-        }
-
-        private void TreeView_ItemInvoked(WinUI.TreeView sender, WinUI.TreeViewItemInvokedEventArgs args)
-        {
-            ViewModel.SelectedItem = args.InvokedItem;
-        }
+        }        
     }
 }

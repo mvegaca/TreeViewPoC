@@ -8,6 +8,10 @@
     xmlns:model="using:TreeViewPoC.Core.Models"
     xmlns:templateSelectors="using:TreeViewPoC.TemplateSelectors"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:behaviors="using:TreeViewPoC.Behaviors"
+    xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    behaviors:NavigationViewHeaderBehavior.HeaderMode="Never"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
 
@@ -106,16 +110,7 @@
             <winui:TreeViewItem
                 AutomationProperties.Name="{x:Bind OrderID}"
                 ItemsSource="{x:Bind Details}" IsExpanded="True">
-                <StackPanel Orientation="Horizontal" Margin="0,4,8,4">
-                    <FontIcon
-                        FontSize="12"
-                        HorizontalAlignment="Left"
-                        Glyph="{x:Bind Symbol}" />
-                    <TextBlock
-                        Margin="8,0,0,0"
-                        TextWrapping="Wrap"                        
-                        Text="{x:Bind ShortDescription}" />
-                </StackPanel>
+                <TextBlock Text="{x:Bind ShortDescription}" Margin="0,4,8,4" />
             </winui:TreeViewItem>
         </DataTemplate>
 
@@ -194,7 +189,7 @@
         <DataTemplate x:Key="OrderDetailTemplate" x:DataType="model:SampleOrderDetail">
             <winui:TreeViewItem
                 AutomationProperties.Name="{x:Bind ProductName}">
-                <TextBlock Text="{x:Bind ProductName}" TextWrapping="Wrap" Margin="4,4,8,4" />
+                <TextBlock Text="{x:Bind ShortDescription}" TextWrapping="Wrap" Margin="4,4,8,4" />
             </winui:TreeViewItem>
         </DataTemplate>
 
@@ -279,18 +274,77 @@
 
     </Page.Resources>
 
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition MinWidth="200" MaxWidth="350" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
-        <winui:TreeView
-            Grid.Column="0"
-            SelectionMode="Single"
-            ItemInvoked="TreeView_ItemInvoked"
-            ItemsSource="{x:Bind ViewModel.DataSource}"
-            ItemTemplateSelector="{StaticResource TreeViewTemplateSelector}" />
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <!--641 is the default CompactModeThresholdWidth in NavigationView -->
+                        <AdaptiveTrigger MinWindowWidth="641" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="header.Margin" Value="0,0,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid Grid.Column="0" Background="{ThemeResource  SystemChromeMediumLowColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid x:Name="header" Margin="80,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Text="TreeView"
+                    Margin="12,0,0,0"
+                    Style="{StaticResource ListTitleStyle}"
+                    VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Button
+                        x:Name="collapseAllButton"
+                        Content="&#xF5ED;"
+                        FontSize="14"
+                        Padding="12,0,12,0"
+                        VerticalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        FontFamily="Segoe MDL2 Assets"
+                        Command="{Binding ElementName=expandCollapseBehavior, Path=CollapseAllCommand}"
+                        Background="Transparent" />
+                    <Button
+                        x:Name="expandAllButton"
+                        Content="&#xE74B;" 
+                        FontSize="14"
+                        Padding="12,0,12,0"
+                        VerticalAlignment="Stretch"
+                        VerticalContentAlignment="Center"
+                        FontFamily="Segoe MDL2 Assets"
+                        Command="{Binding ElementName=expandCollapseBehavior, Path=ExpandAllCommand}"
+                        Background="Transparent" />
+                </StackPanel>
+            </Grid>
+            <winui:TreeView
+                x:Name="treeView"
+                Grid.Row="1"
+                SelectionMode="Single"
+                ItemsSource="{x:Bind ViewModel.SampleItems}"
+                ItemTemplateSelector="{StaticResource TreeViewTemplateSelector}">
+                <i:Interaction.Behaviors>
+                    <behaviors:TreeViewExpandCollapseBehavior x:Name="expandCollapseBehavior" />
+                    <ic:EventTriggerBehavior EventName="ItemInvoked">
+                        <ic:InvokeCommandAction Command="{x:Bind ViewModel.ItemInvokedCommand}" />
+                    </ic:EventTriggerBehavior>
+                </i:Interaction.Behaviors>
+            </winui:TreeView>
+        </Grid>
 
         <ScrollViewer
             Grid.Column="1"

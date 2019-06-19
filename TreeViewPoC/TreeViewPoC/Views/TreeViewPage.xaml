@@ -25,79 +25,81 @@
         </DataTemplate>
 
         <DataTemplate x:Key="CompanyContentTemplate" x:DataType="model:SampleCompany">
-            <StackPanel Margin="12">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Text="Company ID"
+                        Style="{StaticResource TitleTextBlockStyle}" />
+                    <TextBlock
+                        Text="{x:Bind CompanyID}"
+                        Margin="{StaticResource SmallLeftMargin}"
+                        Style="{StaticResource TitleTextBlockStyle}" />
+                </StackPanel>
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Company ID" />
-                <TextBlock
-                    Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind CompanyID}" />
-                <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Company name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind CompanyName}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Contact name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind ContactName}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Contact title" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind ContactTitle}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Contact phone" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Phone}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Contact fax" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Fax}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Address" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Address}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="City" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind City}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Region" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Region}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Country" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Country}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Postal code" />
                 <TextBlock
@@ -115,69 +117,71 @@
         </DataTemplate>
 
         <DataTemplate x:Key="OrderContentTemplate" x:DataType="model:SampleOrder">
-            <StackPanel Margin="12">
-                <FontIcon
-                    FontSize="48"
-                    HorizontalAlignment="Left"
-                    Glyph="{x:Bind Symbol}" />
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon
+                        FontSize="48"
+                        Glyph="{x:Bind Symbol}" />
+                    <TextBlock
+                        Text="Order ID"
+                        Margin="{StaticResource SmallLeftMargin}"
+                        Style="{StaticResource TitleTextBlockStyle}" />
+                    <TextBlock
+                        Text="{x:Bind OrderID}"
+                        Margin="{StaticResource SmallLeftMargin}"
+                        Style="{StaticResource TitleTextBlockStyle}" />
+                </StackPanel>
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Order ID" />
-                <TextBlock
-                    Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind OrderID}" />
-                <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Order date" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind OrderDate}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Required date" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind RequiredDate}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Shipped date" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind ShippedDate}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Status" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Status}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Freight" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Freight}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="OrderTotal" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind OrderTotal}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Shipper name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind ShipperName}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Shipper phone" />
                 <TextBlock
@@ -194,65 +198,67 @@
         </DataTemplate>
 
         <DataTemplate x:Key="OrderDetailContentTemplate" x:DataType="model:SampleOrderDetail">
-            <StackPanel Margin="12">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        Text="Product ID"
+                        Style="{StaticResource TitleTextBlockStyle}" />
+                    <TextBlock
+                        Text="{x:Bind ProductID}"
+                        Margin="{StaticResource SmallLeftMargin}"
+                        Style="{StaticResource TitleTextBlockStyle}" />
+                </StackPanel>
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Product ID" />
-                <TextBlock
-                    Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind ProductID}" />
-                <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Product name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind ProductName}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
-                    Style="{StaticResource DetailSubTitleStyle}"
-                    Text="Quantity per unit" />
-                <TextBlock
-                    Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind QuantityPerUnit}" />
-                <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Category name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind CategoryName}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Category description" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind CategoryDescription}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
+                    Style="{StaticResource DetailSubTitleStyle}"
+                    Text="Quantity per unit" />
+                <TextBlock
+                    Style="{StaticResource DetailBodyBaseMediumStyle}"
+                    Text="{x:Bind QuantityPerUnit}" />
+                <TextBlock
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Quantity" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Quantity}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Unit price" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind UnitPrice}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Discount" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
                     Text="{x:Bind Discount}" />
                 <TextBlock
-                    Margin="{StaticResource SmallTopMargin}"
+                    Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Total" />
                 <TextBlock
@@ -274,10 +280,9 @@
 
     </Page.Resources>
 
-
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="200" MaxWidth="350" />
+            <ColumnDefinition x:Name="treeViewColumn" MinWidth="150" MaxWidth="350" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <VisualStateManager.VisualStateGroups>
@@ -289,6 +294,8 @@
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="header.Margin" Value="0,0,0,0" />
+                        <Setter Target="treeViewColumn.Width" Value="350" />
+                        <Setter Target="treeViewColumn.MaxWidth" Value="500" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -348,7 +355,7 @@
 
         <ScrollViewer
             Grid.Column="1"
-            Margin="16,0,0,0">
+            Padding="{StaticResource DetailPageMargin}">
             <ContentControl            
                 Content="{x:Bind ViewModel.SelectedItem, Mode=OneWay}"
                 ContentTemplateSelector="{StaticResource ContentTemplateSelector}" />

@@ -119,14 +119,9 @@
         <DataTemplate x:Key="OrderContentTemplate" x:DataType="model:SampleOrder">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <FontIcon
-                        FontSize="48"
-                        VerticalAlignment="Center"
-                        Glyph="{x:Bind Symbol}" />
                     <TextBlock
                         Text="Order ID"
                         VerticalAlignment="Center"
-                        Margin="{StaticResource SmallLeftMargin}"
                         Style="{StaticResource TitleTextBlockStyle}" />
                     <TextBlock
                         Text="{x:Bind OrderID}"
@@ -320,7 +315,8 @@
                     VerticalAlignment="Center" />
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
                     <Button
-                        Content="&#xF5ED;"
+                        x:Uid="TreeView_CollapseAllButton"
+                        Content="&#xE738;"
                         FontSize="14"
                         Padding="12,0,12,0"
                         VerticalAlignment="Stretch"
@@ -329,7 +325,8 @@
                         Command="{Binding ElementName=expandCollapseBehavior, Path=CollapseAllCommand}"
                         Background="Transparent" />
                     <Button
-                        Content="&#xE74B;" 
+                        x:Uid="TreeView_ExpandAllButton"
+                        Content="&#xE710;" 
                         FontSize="14"
                         Padding="12,0,12,0"
                         VerticalAlignment="Stretch"

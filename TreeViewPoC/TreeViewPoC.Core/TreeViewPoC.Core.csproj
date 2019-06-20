@@ -4,12 +4,6 @@
     <RootNamespace>TreeViewPoC.Core</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Data\SampleData.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Data\SampleData.json" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
   <ItemGroup>

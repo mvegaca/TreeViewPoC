@@ -22,6 +22,7 @@
     <Thickness x:Key="XSmallLeftTopRightBottomMargin">8, 8, 8, 8</Thickness>
     <!--Extra Extra Small size margins-->
     <Thickness x:Key="XXSmallTopMargin">0, 4, 0, 0</Thickness>
+    <Thickness x:Key="XXSmallTopRightBottomMargin">0, 4, 4, 4</Thickness>
     <!--MasterDetail size margins-->
     <Thickness x:Key="DetailPageMargin">52,40,52,0</Thickness>
 </ResourceDictionary>

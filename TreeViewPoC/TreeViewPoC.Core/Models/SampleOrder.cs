@@ -8,7 +8,7 @@ namespace TreeViewPoC.Core.Models
     // It is the model class we use to display data on pages like Grid, Chart, and Master Detail.
     public class SampleOrder
     {
-        public string OrderID { get; set; }
+        public long OrderID { get; set; }
 
         public DateTime? OrderDate { get; set; }
 

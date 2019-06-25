@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-using TreeViewPoC.Core.Helpers;
 using TreeViewPoC.Core.Models;
 
 namespace TreeViewPoC.Core.Services
@@ -41,7 +39,7 @@ namespace TreeViewPoC.Core.Services
                     {
                         new SampleOrder()
                         {
-                            OrderID = "10643",
+                            OrderID = 10643,
                             OrderDate = new DateTime(1997,8,25),
                             RequiredDate = new DateTime(1997,9,22),
                             ShippedDate = new DateTime(1997,9,22),
@@ -95,7 +93,7 @@ namespace TreeViewPoC.Core.Services
                         },
                         new SampleOrder()
                         {
-                            OrderID = "10835",
+                            OrderID = 10835,
                             OrderDate = new DateTime(1998,1,15),
                             RequiredDate = new DateTime(1998,2,12),
                             ShippedDate = new DateTime(1998,1,21),
@@ -137,7 +135,7 @@ namespace TreeViewPoC.Core.Services
                         },
                         new SampleOrder()
                         {
-                            OrderID = "10952",
+                            OrderID = 10952,
                             OrderDate = new DateTime(1998,3,16),
                             RequiredDate = new DateTime(1998,4,27),
                             ShippedDate = new DateTime(1998,3,24),
@@ -196,7 +194,7 @@ namespace TreeViewPoC.Core.Services
                     {
                         new SampleOrder()
                         {
-                            OrderID = "10625",
+                            OrderID = 10625,
                             OrderDate = new DateTime(1997,8,8),
                             RequiredDate = new DateTime(1997,9,5),
                             ShippedDate = new DateTime(1997,8,14),
@@ -250,7 +248,7 @@ namespace TreeViewPoC.Core.Services
                         },
                         new SampleOrder()
                         {
-                            OrderID = "10926",
+                            OrderID = 10926,
                             OrderDate = new DateTime(1998,3,4),
                             RequiredDate = new DateTime(1998,4,1),
                             ShippedDate = new DateTime(1998,3,11),
@@ -333,7 +331,7 @@ namespace TreeViewPoC.Core.Services
                     {
                         new SampleOrder()
                         {
-                            OrderID = "10507",
+                            OrderID = 10507,
                             OrderDate = new DateTime(1997,4,15),
                             RequiredDate = new DateTime(1997,5,13),
                             ShippedDate = new DateTime(1997,4,22),
@@ -375,7 +373,7 @@ namespace TreeViewPoC.Core.Services
                         },
                         new SampleOrder()
                         {
-                            OrderID = "10573",
+                            OrderID = 10573,
                             OrderDate = new DateTime(1997,6,19),
                             RequiredDate = new DateTime(1997,7,17),
                             ShippedDate = new DateTime(1997,6,20),
@@ -429,7 +427,7 @@ namespace TreeViewPoC.Core.Services
                         },
                         new SampleOrder()
                         {
-                            OrderID = "10682",
+                            OrderID = 10682,
                             OrderDate = new DateTime(1997,9,25),
                             RequiredDate = new DateTime(1997,10,23),
                             ShippedDate = new DateTime(1997,10,1),

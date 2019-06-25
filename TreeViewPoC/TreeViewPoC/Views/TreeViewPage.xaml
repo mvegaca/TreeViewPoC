@@ -20,7 +20,7 @@
             <winui:TreeViewItem
                 AutomationProperties.Name="{x:Bind CompanyName}"
                 ItemsSource="{x:Bind Orders}" IsExpanded="True">
-                <TextBlock Text="{x:Bind CompanyName}" Margin="0,4,8,4" />
+                <TextBlock Text="{x:Bind CompanyName}" Margin="{StaticResource XXSmallTopRightBottomMargin}" />
             </winui:TreeViewItem>
         </DataTemplate>
 
@@ -112,7 +112,7 @@
             <winui:TreeViewItem
                 AutomationProperties.Name="{x:Bind OrderID}"
                 ItemsSource="{x:Bind Details}" IsExpanded="True">
-                <TextBlock Text="{x:Bind ShortDescription}" Margin="0,4,8,4" />
+                <TextBlock Text="{x:Bind ShortDescription}" Margin="{StaticResource XXSmallTopRightBottomMargin}" />
             </winui:TreeViewItem>
         </DataTemplate>
 
@@ -191,7 +191,7 @@
         <DataTemplate x:Key="OrderDetailTemplate" x:DataType="model:SampleOrderDetail">
             <winui:TreeViewItem
                 AutomationProperties.Name="{x:Bind ProductName}">
-                <TextBlock Text="{x:Bind ShortDescription}" TextWrapping="Wrap" Margin="4,4,8,4" />
+                <TextBlock Text="{x:Bind ShortDescription}" TextWrapping="Wrap" Margin="{StaticResource XXSmallTopRightBottomMargin}" />
             </winui:TreeViewItem>
         </DataTemplate>
 
@@ -310,7 +310,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock
                     Text="TreeView"
-                    Margin="12,0,0,0"
+                    Margin="{StaticResource SmallLeftMargin}"
                     Style="{StaticResource ListTitleStyle}"
                     VerticalAlignment="Center" />
                 <StackPanel Grid.Column="1" Orientation="Horizontal">
@@ -318,7 +318,7 @@
                         x:Uid="TreeView_CollapseAllButton"
                         Content="&#xE738;"
                         FontSize="14"
-                        Padding="12,0,12,0"
+                        Padding="{StaticResource SmallLeftRightMargin}"
                         VerticalAlignment="Stretch"
                         VerticalContentAlignment="Center"
                         FontFamily="Segoe MDL2 Assets"
@@ -328,7 +328,7 @@
                         x:Uid="TreeView_ExpandAllButton"
                         Content="&#xE710;" 
                         FontSize="14"
-                        Padding="12,0,12,0"
+                        Padding="{StaticResource SmallLeftRightMargin}"
                         VerticalAlignment="Stretch"
                         VerticalContentAlignment="Center"
                         FontFamily="Segoe MDL2 Assets"

@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     xmlns:model="using:TreeViewPoC.Core.Models"
+    xmlns:viewModel="using:TreeViewPoC.ViewModels"
     xmlns:templateSelectors="using:TreeViewPoC.TemplateSelectors"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:behaviors="using:TreeViewPoC.Behaviors"
@@ -17,22 +18,14 @@
 
     <Page.Resources>
         <!--COMPANY TEMPLATES-->
-        <DataTemplate x:Key="CompanyTemplate" x:DataType="model:SampleCompany">
-            <winui:TreeViewItem
-                AutomationProperties.Name="{x:Bind CompanyName}"
-                ItemsSource="{x:Bind Orders}" IsExpanded="True">
-                <TextBlock Text="{x:Bind CompanyName}" Margin="{StaticResource XXSmallTopRightBottomMargin}" />
-            </winui:TreeViewItem>
-        </DataTemplate>
-
-        <DataTemplate x:Key="CompanyContentTemplate" x:DataType="model:SampleCompany">
+        <DataTemplate x:Key="CompanyContentTemplate" x:DataType="viewModel:SampleCompanyViewModel">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         Text="Company ID"
                         Style="{StaticResource TitleTextBlockStyle}" />
                     <TextBlock
-                        Text="{x:Bind CompanyID}"
+                        Text="{x:Bind Model.CompanyID}"
                         Margin="{StaticResource SmallLeftMargin}"
                         Style="{StaticResource TitleTextBlockStyle}" />
                 </StackPanel>
@@ -42,83 +35,75 @@
                     Text="Company name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind CompanyName}" />
+                    Text="{x:Bind Model.CompanyName}" />
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Contact name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind ContactName}" />
+                    Text="{x:Bind Model.ContactName}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Contact title" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind ContactTitle}" />
+                    Text="{x:Bind Model.ContactTitle}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Contact phone" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Phone}" />
+                    Text="{x:Bind Model.Phone}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Contact fax" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Fax}" />
+                    Text="{x:Bind Model.Fax}" />
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Address" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Address}" />
+                    Text="{x:Bind Model.Address}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="City" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind City}" />
+                    Text="{x:Bind Model.City}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Region" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Region}" />
+                    Text="{x:Bind Model.Region}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Country" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Country}" />
+                    Text="{x:Bind Model.Country}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Postal code" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind PostalCode}" />
+                    Text="{x:Bind Model.PostalCode}" />
             </StackPanel>
         </DataTemplate>
 
         <!--ORDER TEMPLATES-->
-        <DataTemplate x:Key="OrderTemplate" x:DataType="model:SampleOrder">
-            <winui:TreeViewItem
-                AutomationProperties.Name="{x:Bind OrderID}"
-                ItemsSource="{x:Bind Details}" IsExpanded="True">
-                <TextBlock Text="{x:Bind ShortDescription}" Margin="{StaticResource XXSmallTopRightBottomMargin}" />
-            </winui:TreeViewItem>
-        </DataTemplate>
-
-        <DataTemplate x:Key="OrderContentTemplate" x:DataType="model:SampleOrder">
+        <DataTemplate x:Key="OrderContentTemplate" x:DataType="viewModel:SampleOrderViewModel">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
@@ -126,7 +111,7 @@
                         VerticalAlignment="Center"
                         Style="{StaticResource TitleTextBlockStyle}" />
                     <TextBlock
-                        Text="{x:Bind OrderID}"
+                        Text="{x:Bind Model.OrderID}"
                         VerticalAlignment="Center"
                         Margin="{StaticResource SmallLeftMargin}"
                         Style="{StaticResource TitleTextBlockStyle}" />
@@ -137,75 +122,68 @@
                     Text="Order date" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind OrderDate}" />
+                    Text="{x:Bind Model.OrderDate}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Required date" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind RequiredDate}" />
+                    Text="{x:Bind Model.RequiredDate}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Shipped date" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind ShippedDate}" />
+                    Text="{x:Bind Model.ShippedDate}" />
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Status" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Status}" />
+                    Text="{x:Bind Model.Status}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Freight" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Freight}" />
+                    Text="{x:Bind Model.Freight}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="OrderTotal" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind OrderTotal}" />
+                    Text="{x:Bind Model.OrderTotal}" />
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Shipper name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind ShipperName}" />
+                    Text="{x:Bind Model.ShipperName}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Shipper phone" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind ShipperPhone}" />
+                    Text="{x:Bind Model.ShipperPhone}" />
             </StackPanel>
         </DataTemplate>
 
         <!--ORDER DETAILS TEMPLATES-->
-        <DataTemplate x:Key="OrderDetailTemplate" x:DataType="model:SampleOrderDetail">
-            <winui:TreeViewItem
-                AutomationProperties.Name="{x:Bind ProductName}">
-                <TextBlock Text="{x:Bind ShortDescription}" TextWrapping="Wrap" Margin="{StaticResource XXSmallTopRightBottomMargin}" />
-            </winui:TreeViewItem>
-        </DataTemplate>
-
-        <DataTemplate x:Key="OrderDetailContentTemplate" x:DataType="model:SampleOrderDetail">
+        <DataTemplate x:Key="OrderDetailContentTemplate" x:DataType="viewModel:SampleOrderDetailViewModel">
             <StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         Text="Product ID"
                         Style="{StaticResource TitleTextBlockStyle}" />
                     <TextBlock
-                        Text="{x:Bind ProductID}"
+                        Text="{x:Bind Model.ProductID}"
                         Margin="{StaticResource SmallLeftMargin}"
                         Style="{StaticResource TitleTextBlockStyle}" />
                 </StackPanel>
@@ -215,64 +193,69 @@
                     Text="Product name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind ProductName}" />
+                    Text="{x:Bind Model.ProductName}" />
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Category name" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind CategoryName}" />
+                    Text="{x:Bind Model.CategoryName}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Category description" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind CategoryDescription}" />
+                    Text="{x:Bind Model.CategoryDescription}" />
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Quantity per unit" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind QuantityPerUnit}" />
+                    Text="{x:Bind Model.QuantityPerUnit}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Quantity" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Quantity}" />
+                    Text="{x:Bind Model.Quantity}" />
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Unit price" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind UnitPrice}" />
+                    Text="{x:Bind Model.UnitPrice}" />
                 <TextBlock
                     Margin="{StaticResource XSmallTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Discount" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Discount}" />
+                    Text="{x:Bind Model.Discount}" />
                 <TextBlock
                     Margin="{StaticResource MediumTopMargin}"
                     Style="{StaticResource DetailSubTitleStyle}"
                     Text="Total" />
                 <TextBlock
                     Style="{StaticResource DetailBodyBaseMediumStyle}"
-                    Text="{x:Bind Total}" />
+                    Text="{x:Bind Model.Total}" />
 
             </StackPanel>
         </DataTemplate>
 
-        <templateSelectors:SampleDataTemplateSelector x:Key="TreeViewTemplateSelector"
-            CompanyTemplate="{StaticResource CompanyTemplate}"
-            OrderTemplate="{StaticResource OrderTemplate}"
-            OrderDetailTemplate="{StaticResource OrderDetailTemplate}" />
+        <DataTemplate x:Key="TreeViewItemTemplate" x:DataType="viewModel:IHierarchical">
+            <winui:TreeViewItem
+                IsExpanded="True"
+                ItemsSource="{x:Bind Child}"
+                IsSelected="{x:Bind IsSelected, Mode=OneWay}"
+                AutomationProperties.Name="{x:Bind Name}">
+                <TextBlock Text="{x:Bind Name}" TextWrapping="Wrap" Margin="{StaticResource XXSmallTopRightBottomMargin}" />
+            </winui:TreeViewItem>
+        </DataTemplate>
 
         <templateSelectors:SampleDataTemplateSelector x:Key="ContentTemplateSelector"
             CompanyTemplate="{StaticResource CompanyContentTemplate}"
@@ -345,7 +328,7 @@
                 SelectionMode="Single"
                 CanReorderItems="False"
                 ItemsSource="{x:Bind ViewModel.SampleItems}"
-                ItemTemplateSelector="{StaticResource TreeViewTemplateSelector}">
+                ItemTemplate="{StaticResource TreeViewItemTemplate}">
                 <i:Interaction.Behaviors>
                     <behaviors:TreeViewExpandCollapseBehavior x:Name="expandCollapseBehavior" />
                     <ic:EventTriggerBehavior EventName="ItemInvoked">

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TreeViewPoC.Core.Models;
 using TreeViewPoC.Core.Services;
 using TreeViewPoC.Helpers;
 using WinUI = Microsoft.UI.Xaml.Controls;
@@ -33,7 +31,7 @@ namespace TreeViewPoC.ViewModels
             }
         }
 
-        public ObservableCollection<SampleCompany> SampleItems { get; } = new ObservableCollection<SampleCompany>();
+        public ObservableCollection<IHierarchical> SampleItems { get; } = new ObservableCollection<IHierarchical>();
 
         public ICommand ItemInvokedCommand => _itemInvokedCommand ?? (_itemInvokedCommand = new RelayCommand<WinUI.TreeViewItemInvokedEventArgs>(OnItemInvoked));
 
@@ -48,17 +46,18 @@ namespace TreeViewPoC.ViewModels
             var data = await SampleDataService.GetCompaniesDataAsync();
             foreach (var item in data)
             {
-                SampleItems.Add(item);
+                SampleItems.Add(new SampleCompanyViewModel(item));
             }
 
             if (SampleItems.Any())
             {
                 SelectedItem = SampleItems.First();
+                SampleItems.First().IsSelected = true;
             }
         }
 
         private void OnItemInvoked(WinUI.TreeViewItemInvokedEventArgs args)
-            => SelectedItem = args.InvokedItem;
+            =>SelectedItem = args.InvokedItem;
 
         private void OnCollapseAll()
             => IsCollapsed = true;

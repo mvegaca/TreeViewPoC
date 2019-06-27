@@ -1,4 +1,4 @@
-﻿using TreeViewPoC.Core.Models;
+﻿using TreeViewPoC.ViewModels;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -16,11 +16,11 @@ namespace TreeViewPoC.TemplateSelectors
         {
             switch (item)
             {
-                case SampleCompany company:
+                case SampleCompanyViewModel company:
                     return CompanyTemplate;
-                case SampleOrder order:
+                case SampleOrderViewModel order:
                     return OrderTemplate;
-                case SampleOrderDetail orderDetail:
+                case SampleOrderDetailViewModel orderDetail:
                     return OrderDetailTemplate;
             }
 
@@ -31,11 +31,11 @@ namespace TreeViewPoC.TemplateSelectors
         {
             switch (item)
             {
-                case SampleCompany company:
+                case SampleCompanyViewModel company:
                     return CompanyTemplate;
-                case SampleOrder order:
+                case SampleOrderViewModel order:
                     return OrderTemplate;
-                case SampleOrderDetail orderDetail:
+                case SampleOrderDetailViewModel orderDetail:
                     return OrderDetailTemplate;
             }
 

@@ -179,6 +179,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TemplateSelectors\SampleDataTemplateSelector.cs" />
+    <Compile Include="ViewModels\Items\IHierarchical.cs" />
+    <Compile Include="ViewModels\Items\SampleOrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\Items\SampleOrderViewModel.cs" />
+    <Compile Include="ViewModels\Items\SampleCompanyViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

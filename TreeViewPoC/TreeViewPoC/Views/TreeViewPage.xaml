@@ -316,28 +316,18 @@
                     Margin="{StaticResource SmallLeftMargin}"
                     Style="{StaticResource ListTitleStyle}"
                     VerticalAlignment="Center" />
-                <StackPanel Grid.Column="1" Orientation="Horizontal">
-                    <Button
-                        x:Uid="TreeView_CollapseAllButton"
-                        Content="&#xE738;"
-                        FontSize="14"
-                        Padding="{StaticResource SmallLeftRightMargin}"
-                        VerticalAlignment="Stretch"
-                        VerticalContentAlignment="Center"
-                        FontFamily="Segoe MDL2 Assets"
-                        Command="{Binding ElementName=expandCollapseBehavior, Path=CollapseAllCommand}"
-                        Background="Transparent" />
-                    <Button
-                        x:Uid="TreeView_ExpandAllButton"
-                        Content="&#xE710;" 
-                        FontSize="14"
-                        Padding="{StaticResource SmallLeftRightMargin}"
-                        VerticalAlignment="Stretch"
-                        VerticalContentAlignment="Center"
-                        FontFamily="Segoe MDL2 Assets"
-                        Command="{Binding ElementName=expandCollapseBehavior, Path=ExpandAllCommand}"
-                        Background="Transparent" />
-                </StackPanel>
+                <Button
+                    Grid.Column="1"
+                    x:Uid="TreeView_CollapseAllButton"
+                    Content="&#xF165;"
+                    FontSize="14"
+                    Padding="{StaticResource SmallLeftRightMargin}"
+                    VerticalAlignment="Stretch"
+                    VerticalContentAlignment="Center"
+                    FontFamily="Segoe MDL2 Assets"
+                    Command="{Binding ElementName=expandCollapseBehavior, Path=CollapseAllCommand}"
+                    Background="Transparent">
+                </Button>
             </Grid>
             <winui:TreeView
                 x:Name="treeView"
@@ -347,7 +337,7 @@
                 ItemsSource="{x:Bind ViewModel.SampleItems}"
                 ItemTemplateSelector="{StaticResource TreeViewTemplateSelector}">
                 <i:Interaction.Behaviors>
-                    <behaviors:TreeViewExpandCollapseBehavior x:Name="expandCollapseBehavior" />
+                    <behaviors:TreeViewCollapseBehavior x:Name="expandCollapseBehavior" />
                     <ic:EventTriggerBehavior EventName="ItemInvoked">
                         <ic:InvokeCommandAction Command="{x:Bind ViewModel.ItemInvokedCommand}" />
                     </ic:EventTriggerBehavior>
@@ -358,7 +348,7 @@
         <ScrollViewer
             Grid.Column="1"
             Padding="{StaticResource DetailPageMargin}">
-            <ContentControl            
+            <ContentControl
                 Content="{x:Bind ViewModel.SelectedItem, Mode=OneWay}"
                 ContentTemplateSelector="{StaticResource ContentTemplateSelector}" />
         </ScrollViewer>

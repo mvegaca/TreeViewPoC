@@ -50,11 +50,6 @@ namespace TreeViewPoC.ViewModels
             {
                 SampleItems.Add(item);
             }
-
-            if (SampleItems.Any())
-            {
-                SelectedItem = SampleItems.First();
-            }
         }
 
         private void OnItemInvoked(WinUI.TreeViewItemInvokedEventArgs args)

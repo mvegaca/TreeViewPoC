@@ -101,7 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activation\ActivationHandler.cs" />
-    <Compile Include="Behaviors\TreeViewExpandCollapseBehavior.cs" />
+    <Compile Include="Behaviors\TreeViewCollapseBehavior.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultActivationHandler.cs" />
   </ItemGroup>
@@ -241,7 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.1.190405004.2</Version>
+      <Version>2.1.190606001</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

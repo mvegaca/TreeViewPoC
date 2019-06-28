@@ -14,20 +14,15 @@ namespace TreeViewPoC.TemplateSelectors
 
         protected override DataTemplate SelectTemplateCore(object item)
         {
-            switch (item)
-            {
-                case SampleCompany company:
-                    return CompanyTemplate;
-                case SampleOrder order:
-                    return OrderTemplate;
-                case SampleOrderDetail orderDetail:
-                    return OrderDetailTemplate;
-            }
-
-            return base.SelectTemplateCore(item);
+            return GetTemplate(item) ?? base.SelectTemplateCore(item);
         }
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
+        {
+            return GetTemplate(item) ?? base.SelectTemplateCore(item, container);
+        }
+
+        private DataTemplate GetTemplate(object item)
         {
             switch (item)
             {
@@ -39,7 +34,7 @@ namespace TreeViewPoC.TemplateSelectors
                     return OrderDetailTemplate;
             }
 
-            return base.SelectTemplateCore(item, container);
+            return null;
         }
     }
 }

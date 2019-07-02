@@ -12,6 +12,8 @@ namespace TreeViewPoC.TemplateSelectors
 
         public DataTemplate OrderDetailTemplate { get; set; }
 
+        public DataTemplate DataTemplate { get; set; }
+
         protected override DataTemplate SelectTemplateCore(object item)
         {
             return GetTemplate(item) ?? base.SelectTemplateCore(item);
@@ -32,6 +34,8 @@ namespace TreeViewPoC.TemplateSelectors
                     return OrderTemplate;
                 case SampleOrderDetail orderDetail:
                     return OrderDetailTemplate;
+                case SampleData data:
+                    return DataTemplate;
             }
 
             return null;

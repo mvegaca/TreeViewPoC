@@ -8,7 +8,7 @@ using WinUI = Microsoft.UI.Xaml.Controls;
 
 namespace TreeViewPoC.ViewModels
 {
-    public class TreeViewViewModel : Observable
+    public class TreeViewFourViewModel : Observable
     {
         private ICommand _itemInvokedCommand;
         private object _selectedItem;
@@ -19,24 +19,24 @@ namespace TreeViewPoC.ViewModels
             set { Set(ref _selectedItem, value); }
         }
 
-        public ObservableCollection<SampleCompany> SampleItems { get; } = new ObservableCollection<SampleCompany>();
+        public ObservableCollection<SampleData> SampleItems { get; } = new ObservableCollection<SampleData>();
 
         public ICommand ItemInvokedCommand => _itemInvokedCommand ?? (_itemInvokedCommand = new RelayCommand<WinUI.TreeViewItemInvokedEventArgs>(OnItemInvoked));
 
-        public TreeViewViewModel()
+        public TreeViewFourViewModel()
         {
         }
 
         public async Task LoadDataAsync()
         {
             var data = await SampleDataService.GetCompaniesDataAsync();
-            foreach (var item in data)
-            {
-                SampleItems.Add(item);
-            }
+            SampleItems.Add(new SampleData() { Companies = data });
         }
 
         private void OnItemInvoked(WinUI.TreeViewItemInvokedEventArgs args)
             => SelectedItem = args.InvokedItem;
     }
 }
+
+
+

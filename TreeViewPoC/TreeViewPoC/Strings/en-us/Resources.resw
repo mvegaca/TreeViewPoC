@@ -201,4 +201,16 @@
     <value>Expand all</value>
     <comment>TreeView page expand all buton tooltip</comment>
   </data>
+  <data name="Shell_TreeViewTwo.Content" xml:space="preserve">
+    <value>TreeViewTwo</value>
+  </data>
+  <data name="Shell_TreeViewThree.Content" xml:space="preserve">
+    <value>TreeViewThree</value>
+  </data>
+  <data name="TreeViewThree_CollapseAllLink.Content" xml:space="preserve">
+    <value>Collapse all</value>
+  </data>
+  <data name="Shell_TreeViewFour.Content" xml:space="preserve">
+    <value>TreeViewFour</value>
+  </data>
 </root>

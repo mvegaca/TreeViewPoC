@@ -188,6 +188,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ViewModels\TreeViewTwoViewModel.cs" />
+    <Compile Include="ViewModels\TreeViewThreeViewModel.cs" />
+    <Compile Include="ViewModels\TreeViewFourViewModel.cs" />
     <Compile Include="Views\ShellPage.xaml.cs">
       <DependentUpon>ShellPage.xaml</DependentUpon>
     </Compile>
@@ -256,12 +259,33 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\TreeViewFourPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TreeViewThreePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TreeViewTwoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\TreeViewPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\TreeViewFourPage.xaml.cs">
+      <DependentUpon>TreeViewFourPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TreeViewThreePage.xaml.cs">
+      <DependentUpon>TreeViewThreePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TreeViewTwoPage.xaml.cs">
+      <DependentUpon>TreeViewTwoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TreeViewPage.xaml.cs">
       <DependentUpon>TreeViewPage.xaml</DependentUpon>
     </Compile>

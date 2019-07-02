@@ -8,7 +8,7 @@ using WinUI = Microsoft.UI.Xaml.Controls;
 
 namespace TreeViewPoC.ViewModels
 {
-    public class TreeViewViewModel : Observable
+    public class TreeViewTwoViewModel : Observable
     {
         private ICommand _itemInvokedCommand;
         private object _selectedItem;
@@ -23,7 +23,7 @@ namespace TreeViewPoC.ViewModels
 
         public ICommand ItemInvokedCommand => _itemInvokedCommand ?? (_itemInvokedCommand = new RelayCommand<WinUI.TreeViewItemInvokedEventArgs>(OnItemInvoked));
 
-        public TreeViewViewModel()
+        public TreeViewTwoViewModel()
         {
         }
 
@@ -40,3 +40,4 @@ namespace TreeViewPoC.ViewModels
             => SelectedItem = args.InvokedItem;
     }
 }
+
